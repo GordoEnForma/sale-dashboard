@@ -1,3 +1,5 @@
 export * from './HomePage'
 export * from './SalesHistoryPage'
 export * from './ProductsPage'
+export * from './AuthPage'
+export * from './EditSalePage'
