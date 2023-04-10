@@ -52,7 +52,7 @@ export const AuthPage = () => {
           <Grid container spacing={2}>
             <Grid item xs={12}>
               <Typography variant="h3" textAlign="center">
-                Login
+                Iniciar Sesión
               </Typography>
             </Grid>
             <Grid item xs={12}>
@@ -65,7 +65,7 @@ export const AuthPage = () => {
                   },
                 })}
                 fullWidth
-                label="Email"
+                label="Username"
                 variant="outlined"
                 error={!!errors.username}
                 helperText={errors.username?.message}
@@ -77,7 +77,7 @@ export const AuthPage = () => {
                   required: "La contraseña es requerida",
                 })}
                 fullWidth
-                label="Password"
+                label="Contraseña"
                 type="password"
                 variant="outlined"
                 error={!!errors.password}
@@ -106,7 +106,7 @@ export const AuthPage = () => {
                 fullWidth
                 disabled={isSubmitting}
               >
-                Login
+                Ingresar
               </Button>
             </Grid>
           </Grid>
