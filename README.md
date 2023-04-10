@@ -6,13 +6,13 @@ React dashboard for complete control of the sales & products of a company.
 
 ## Technologies used
 
-- [React](https://reactjs.org/) single page application
+- [React](https://reactjs.org/) with Typescript for app development
 - Routing done using [React Router](https://reactrouter.com/en/main)
 - State management via [React Query](https://tanstack.com/query/latest/docs/react/overview)
 - [Material UI](https://mui.com/material-ui/getting-started/overview/) for design and styles
 - [Recharts.js](https://recharts.org/en-US/) to display data using a set of graphics like tables or pies.
 - [react-table v8](https://tanstack.com/table/v8/docs/guide/introduction) to control and manage the tables
-
+- [Vite](https://vitejs.dev/) for project bundling and initial setup.
 ## Setup
 
 1. Clone the repository and install the dependencies
