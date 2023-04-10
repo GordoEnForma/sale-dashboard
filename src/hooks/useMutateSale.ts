@@ -10,7 +10,11 @@ export const useMutateSale = () => {
             console.log('success')
             console.log(variables)
             // queryClient.invalidateQueries(['sales'])
-            queryClient.setQueryData(['sales'], (oldData: Sale[]) => {
+            queryClient.setQueryData(['sales'], (oldData: Sale[] | undefined) => {
+                if (!oldData) {
+                    return [variables];
+                }
+
                 return [variables, ...oldData]
 
             })
@@ -24,7 +28,11 @@ export const useMutateSale = () => {
 
     const removeSale = async (id: string) => {
         console.log(id);
-        queryClient.setQueryData(['sales'], (oldData: Sale[]) => {
+        queryClient.setQueryData(['sales'], (oldData: Sale[] | undefined) => {
+            if (!oldData) {
+                return oldData;
+            }
+
             // console.log(id)
             return oldData.filter((sale) => {
                 // console.log(sale.id, id);
@@ -40,7 +48,10 @@ export const useMutateSale = () => {
 
     const updateSale = async (sale: Sale) => {
         console.log(sale)
-        queryClient.setQueryData(['sales'], (oldData: Sale[]) => {
+        queryClient.setQueryData(['sales'], (oldData: Sale[] | undefined) => {
+            if (!oldData) {
+                return oldData;
+            }
             return oldData.map((s) => {
                 if (s.id === sale.id) {
                     console.log('found sale');

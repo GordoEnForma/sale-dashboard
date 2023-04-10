@@ -25,10 +25,14 @@ export const ProductForm: FC = () => {
   });
 
   const onSubmit = (data: Product) => {
-    queryClient.setQueryData<Product>(["products"], (oldData: Product[]) => {
-      return [...oldData, data];
-    });
-   
+    queryClient.setQueryData<Product[]>(
+      ["products"],
+      (oldData: Product[] | undefined) => {
+        if (!oldData) return [data];
+        return [...oldData, data];
+      }
+    );
+
     window.alert("Producto añadido con éxito");
     navigation("/app/sales-history");
   };
